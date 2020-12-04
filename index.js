@@ -201,13 +201,6 @@ app.put("/users/:Username", (req, res) => {
     })
   );
 });
-app.get("/users/:Username", (req, res) => {
-    res.json(
-      users.find((user) => {
-        return user.Username === req.params.Username;
-      })
-    );
-  });
 
 //allows user to add movie to favorites
 app.post("/users/:Username/:Title", (req, res) => {
