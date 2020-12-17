@@ -1,0 +1,17 @@
+{
+    "_id" : ObjectId("5fd5358deb9ca08ba7612c71"),
+    "Username" : "sammy khaleel",
+    "Password" : "1234",
+    "Email" : "h.monet1104@gmail.com",
+    "Birthday" : ISODate("1985-02-19T00:00:00Z"),
+    "FavoriteMovies" : [ ]
+}
+{
+    "_id" : ObjectId("5fd535f9eb9ca08ba7612c72"),
+    "Username" : "John Doe",
+    "Password" : "12345",
+    "Email" : "johndoe@gmail.com",
+    "Birthday" : ISODate("1995-03-18T00:00:00Z"),
+    "FavoriteMovies" : [ ]
+}
+{

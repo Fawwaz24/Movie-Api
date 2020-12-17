@@ -1,0 +1,74 @@
+var movie10 = {
+  Title: "Oldboy",
+  Description: "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must find his captor in five days.",
+  Genre: {
+    Name: "Drama",
+    Description: "In film and television, drama is a category of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+  },
+  Director: {
+    Name: "Chan-wook Park",
+    Bio: "Chan-wook Park was born on August 23, 1963 in Seoul, South Korea. He is a producer and director, known for The Handmaiden (2016), Thirst (2009) and Oldboy (2003). He is married to Eun-hee Kim. They have one child.",
+    Birth: "1963",
+    Death: ""
+  },
+  ImagePath: "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie10)
+
+var movie8 = {
+  Title: "Gladiator",
+  Description: "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases.",
+  Genre: {
+    Name: "Action",
+    Description: "In film and television, drama is a category of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+  },
+  Director: {
+    Name: "Ridley Scott",
+    Bio: "Described by film producer Michael Deeley as 'the very best eye in the business', director Ridley Scott was born on November 30, 1937 in South Shields, Tyne and Wear (then County Durham).",
+    Birth: "1937",
+    Death: ""
+  },
+  ImagePath: "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie8)
+
+let user5 = {
+     Username: "Sewan Island",
+    Password: "1998",
+    Email: "Sewan98@gmail.com",
+    Birthday: new Date("1998-01-24"),
+    FavoriteMovies: [],
+}
+db.users.insert(user5)
+
+//read queres 
+db.users.find()
+db.movies.find()
+db.users.findOne({Username: "sammy khaleel"})
+
+//update queres 
+db.movies.update(
+  { _id: ObjectId("5fd16aa0507675ec19c849ab") },
+  { $set: { Description: "A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer." } }
+)
+
+db.users.update(
+  { Username: "sammy khaleel" },
+  { $push: { FavoriteMovies: ObjectId("5fd16aa0507675ec19c849ab") } }
+)
+
+db.users.update(
+  { Username: "sammy khaleel" },
+  { $set: { Email: "update@email.com" } }
+)
+
+
+
+db.users.remove({
+    Username: "sammy khaleel"
+})
+
