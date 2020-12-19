@@ -2,11 +2,15 @@ const express = require("express"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
   uuid = require("uuid");
+
 mongoose = require("mongoose");
 Models = require("./models.js");
 const app = express();
 const Movies = Models.Movie;
 const Users = Models.User;
+let auth = require('./auth')(app);
+const passport = require('passport');
+require('./passport');
 // local connection
 mongoose.connect("mongodb://localhost:27017/myFlixDB", {useNewUrlParser: true});
 // mongoose.connect(
@@ -27,7 +31,7 @@ app.get("/", function (req, res) {
   return res.status(400).send("Welcome to my Flix App");
 });
 
-app.get("/movies", function (
+app.get("/movies", passport.authenticate('jwt', { session: false }), function (
   req,
   res
 ) {
