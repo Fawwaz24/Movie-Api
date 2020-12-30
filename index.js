@@ -82,7 +82,7 @@ app.get("/movies/genre/:Name", passport.authenticate('jwt', { session: false }),
 });
 
 //get list of users
-app.get("/users", passport.authenticate('jwt', { session: false }), function (
+app.get("/users",  function (
   req,
   res
 ) {
