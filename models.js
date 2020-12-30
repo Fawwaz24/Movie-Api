@@ -30,11 +30,11 @@ let movieSchema = mongoose.Schema({
   userSchema.methods.validatePassword = function(password) {
     return bcrypt.compareSync(password, this.Password);
   };
-  
+
   let Movie = mongoose.model('Movie', movieSchema);
   let User = mongoose.model('User', userSchema);
   
   module.exports.Movie = Movie;
   module.exports.User = User;
 
-  mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+  
