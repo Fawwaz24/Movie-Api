@@ -1,5 +1,4 @@
-const cors = require('cors');
-app.use(cors());
+
 const express = require("express"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
@@ -14,6 +13,8 @@ const Users = Models.User;
 let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
+const cors = require('cors');
+app.use(cors());
 
 let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234','https://myflixdb-fs.herokuapp.com'];
 
