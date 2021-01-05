@@ -32,7 +32,7 @@ app.get("/", function (req, res) {
   return res.status(400).send("Welcome to my Flix App");
 });
 
-app.get("/movies", passport.authenticate('jwt', { session: false }), function (
+app.get("/movies", function (
   req,
   res
 ) {

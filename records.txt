@@ -80,4 +80,13 @@ mongo "mongodb+srv://cluster0.zuun6.mongodb.net/myFlixDB" --username fawaz
 mongoimport --uri mongodb+srv://fawaz:fawaz@cluster0.zuun6.mongodb.net/myFlixDB --collection users --type json --file users.json
 
 
+
 C:\Program Files\MongoDB\Server\4.4\bin
+
+
+mongodb+srv://fawaz:Kawasaki!23@cluster0.zuun6.mongodb.net/myFlixDB?retryWrites=true&w=majority
+
+
+mongodb+srv://fawaz:<password>@cluster0.zuun6.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+mongo "mongodb+srv://cluster0.zuun6.mongodb.net/myFlixDB" --username fawaz
