@@ -10,9 +10,7 @@ Models = require("./models.js");
 const app = express();
 const Movies = Models.Movie;
 const Users = Models.User;
-let auth = require('./auth')(app);
-const passport = require('passport');
-require('./passport');
+
 // const cors = require('cors');
 // app.use(cors());
 
@@ -38,6 +36,9 @@ require('./passport');
 app.use(morgan("common"));
 app.use(express.static("public"));
 app.use(bodyParser.json());
+let auth = require('./auth')(app);
+const passport = require('passport');
+require('./passport');
 
 
 
