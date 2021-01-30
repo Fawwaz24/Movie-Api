@@ -5,11 +5,19 @@ const express = require("express"),
   uuid = require("uuid");
 const { check, validationResult } = require('express-validator');
 
+
 mongoose = require("mongoose");
 Models = require("./models.js");
 const app = express();
 const Movies = Models.Movie;
 const Users = Models.User;
+app.use(morgan("common"));
+app.use(express.static("public"));
+app.use(bodyParser.json());
+let auth = require('./auth')(app);
+const passport = require('passport');
+require('./passport');
+
 
 // const cors = require('cors');
 // app.use(cors());
@@ -33,12 +41,6 @@ const Users = Models.User;
    { useNewUrlParser: true }
  );
 
-app.use(morgan("common"));
-app.use(express.static("public"));
-app.use(bodyParser.json());
-let auth = require('./auth')(app);
-const passport = require('passport');
-require('./passport');
 
 
 
