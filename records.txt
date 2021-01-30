@@ -90,3 +90,10 @@ mongodb+srv://fawaz:Kawasaki!23@cluster0.zuun6.mongodb.net/myFlixDB?retryWrites=
 mongodb+srv://fawaz:<password>@cluster0.zuun6.mongodb.net/<dbname>?retryWrites=true&w=majority
 
 mongo "mongodb+srv://cluster0.zuun6.mongodb.net/myFlixDB" --username fawaz
+
+
+
+mongoose.connect(
+      "mongodb+srv://fawaz:Kawasaki!23@cluster0.zuun6.mongodb.net/myFlixDB?retryWrites=true&w=majority",
+   { useNewUrlParser: true }
+ ); 
